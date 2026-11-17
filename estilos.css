@@ -1824,3 +1824,705 @@ main > section:not(.portada)::after {
     font-size: 12px;
     letter-spacing: 1px;
 }
+
+
+/* ==========================================================
+   GLAM | BODA ALEJANDRO & VALENTINA
+   DISEÑO LUXURY WHITE & CHAMPAGNE GOLD
+   Añadir al FINAL de estilos.css
+========================================================== */
+
+:root {
+    --marfil: #fffefa;
+    --crema: #faf8f3;
+    --dorado: #b99a62;
+    --dorado-claro: #dfcda7;
+    --cafe: #514638;
+    --texto: #71685d;
+    --blanco: #ffffff;
+    --rosa: #eee6dc;
+    --verde: #a4a58d;
+}
+
+/* ================================
+   FONDO GENERAL
+================================ */
+
+body {
+    background: #fffefa;
+    color: #71685d;
+}
+
+.seccion {
+    background-color: #fffefa;
+}
+
+.presentacion,
+.video-seccion,
+.regalos,
+.pie-pagina,
+.pase-digital {
+    background-color: #fffefa;
+}
+
+.galeria,
+.itinerario,
+.album,
+.confirmacion {
+    background-color: #fbf9f5;
+}
+
+.vestimenta,
+.cuenta-regresiva {
+    background: #f5f1e9;
+}
+
+/* ================================
+   SOBRE DE BIENVENIDA
+================================ */
+
+.sobre-inicial {
+    background:
+        radial-gradient(ellipse at center,
+        rgba(255,255,255,.98),
+        rgba(250,247,240,.98));
+}
+
+.sobre-contenido {
+    background: #ffffff;
+    border: 1px solid #c9ad79;
+    box-shadow: 0 25px 80px rgba(150,125,80,.13);
+}
+
+.sobre-contenido::before {
+    border-color: #e5d5b5;
+}
+
+.sobre-monograma {
+    color: #65533b;
+}
+
+.sobre-monograma span {
+    color: #b99a62;
+}
+
+.sobre-frase {
+    color: #71685d;
+}
+
+.sello {
+    border-color: #c9ad79;
+    color: #b99a62;
+}
+
+.boton-abrir,
+.boton-principal {
+    background: #b99a62;
+    border-color: #b99a62;
+    color: #ffffff;
+}
+
+.boton-abrir:hover,
+.boton-principal:hover {
+    background: #967847;
+    border-color: #967847;
+}
+
+/* ================================
+   CONTROLES FLOTANTES
+================================ */
+
+.control-flotante {
+    background: rgba(255,255,255,.97);
+    border-color: #d9c59d;
+    color: #a88a54;
+}
+
+.control-flotante:hover,
+.control-flotante.activo {
+    background: #b99a62;
+    color: #ffffff;
+}
+
+/* ================================
+   MENÚ LATERAL
+================================ */
+
+.menu-lateral {
+    background: #fffefa;
+    border-left: 1px solid #e5d7bd;
+}
+
+.menu-lateral a {
+    color: #62533f;
+}
+
+.menu-lateral a:hover {
+    color: #b99a62;
+}
+
+.menu-etiqueta {
+    color: #b99a62;
+}
+
+/* ================================
+   PORTADA
+================================ */
+
+.portada {
+    background: #fffefa;
+    color: #514638;
+}
+
+.portada-imagen {
+    opacity: .10;
+    filter: grayscale(100%);
+}
+
+.portada-velo {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,254,250,.82),
+            rgba(255,254,250,.90)
+        );
+}
+
+.portada-contenido {
+    color: #514638;
+}
+
+.texto-superior,
+.etiqueta-seccion {
+    color: #b99a62;
+    letter-spacing: 4px;
+}
+
+.nombres-portada {
+    color: #514638;
+    font-weight: 400;
+}
+
+.ampersand {
+    color: #b99a62;
+}
+
+.ornamento {
+    color: #b99a62;
+}
+
+.ornamento span {
+    background: #c9ad79;
+}
+
+.portada-mensaje {
+    color: #71685d;
+}
+
+.fecha-portada {
+    color: #806c4d;
+    border-color: #d9c59d;
+}
+
+.flecha-bajar {
+    color: #b99a62;
+}
+
+/* ================================
+   TITULARES Y SEPARADORES
+================================ */
+
+.titulo-caligrafico {
+    color: #62513d;
+}
+
+.separador-floral {
+    color: #b99a62;
+}
+
+.texto-intro,
+.texto-presentacion {
+    color: #766d62;
+}
+
+.decoracion-esquina {
+    color: rgba(185,154,98,.17);
+}
+
+/* ================================
+   PRESENTACIÓN
+================================ */
+
+.presentacion {
+    background:
+        radial-gradient(
+            ellipse at 0 50%,
+            rgba(223,205,167,.16),
+            transparent 38%
+        ),
+        #fffefa;
+}
+
+.fecha-dia {
+    color: #b99a62;
+}
+
+.fecha-detalle div {
+    color: #655844;
+}
+
+/* ================================
+   CUENTA REGRESIVA
+================================ */
+
+.cuenta-regresiva {
+    background: #f5f1e9;
+}
+
+.onda-superior path,
+.onda-inferior path {
+    fill: #fffefa;
+}
+
+.contador-unidad strong {
+    color: #62513d;
+}
+
+.contador-unidad span {
+    color: #9c835a;
+}
+
+.contador > i {
+    color: #b99a62;
+}
+
+.contador-pie {
+    color: #71685d;
+}
+
+/* ================================
+   HISTORIA
+================================ */
+
+.historia-imagen img {
+    border-radius: 48% 48% 3px 3px;
+}
+
+.marco-foto {
+    border-color: #c9ad79;
+}
+
+.historia-texto p {
+    color: #71685d;
+}
+
+.firma-historia {
+    color: #b99a62 !important;
+}
+
+/* ================================
+   GALERÍA DE FOTOGRAFÍAS
+================================ */
+
+.galeria {
+    background: #fbf9f5;
+}
+
+.foto-galeria {
+    background: #ffffff;
+    border: 7px solid #ffffff;
+    box-shadow: 0 10px 35px rgba(120,95,55,.10);
+}
+
+/* ================================
+   VIDEO
+================================ */
+
+.video-contenedor {
+    background: #f4efe5;
+    border: 8px solid #ffffff;
+    box-shadow: 0 15px 45px rgba(120,95,55,.12);
+}
+
+.video-placeholder {
+    color: #62513d;
+}
+
+.video-placeholder span {
+    color: #b99a62;
+}
+
+/* ================================
+   ITINERARIO
+================================ */
+
+.itinerario {
+    background: #fbf9f5;
+}
+
+.itinerario-lista::before {
+    background: #d8c39b;
+}
+
+.evento-hora {
+    color: #b99a62;
+}
+
+.evento-punto {
+    background: #b99a62;
+    outline-color: #fbf9f5;
+    box-shadow: 0 0 0 1px #b99a62;
+}
+
+.evento-descripcion h3 {
+    color: #62513d;
+}
+
+/* ================================
+   UBICACIONES
+================================ */
+
+.ubicacion-tarjeta {
+    background: #ffffff;
+    border: 1px solid #dfcda7;
+    box-shadow: 0 12px 35px rgba(120,95,55,.07);
+}
+
+.icono-ubicacion {
+    color: #b99a62;
+}
+
+.ubicacion-tarjeta h3 {
+    color: #62513d;
+}
+
+.boton-secundario {
+    border-color: #c9ad79;
+    color: #806c4d;
+}
+
+.boton-secundario:hover {
+    background: #b99a62;
+    color: #ffffff;
+}
+
+/* ================================
+   VESTIMENTA
+================================ */
+
+.vestimenta {
+    background: #f5f1e9;
+}
+
+.vestimenta-icono {
+    color: #b99a62;
+}
+
+.vestimenta h3 {
+    color: #62513d;
+}
+
+.color-muestra {
+    border-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(120,95,55,.13);
+}
+
+/* ================================
+   REGALOS
+================================ */
+
+.regalo-item {
+    background: #ffffff;
+    border: 1px solid #e2d4b9;
+    box-shadow: 0 8px 25px rgba(120,95,55,.05);
+}
+
+.regalo-item h3 {
+    color: #62513d;
+}
+
+.regalo-item a {
+    color: #b99a62;
+}
+
+/* ================================
+   CONFIRMACIÓN RSVP
+================================ */
+
+.confirmacion {
+    background:
+        radial-gradient(
+            ellipse at 0 100%,
+            rgba(223,205,167,.20),
+            transparent 45%
+        ),
+        #fbf9f5;
+}
+
+.confirmacion-decoracion {
+    color: rgba(185,154,98,.28);
+}
+
+.datos-invitacion h3 {
+    color: #b99a62;
+}
+
+#formularioRSVP input,
+#formularioRSVP select,
+#formularioRSVP textarea {
+    background: #ffffff;
+    border: 1px solid #dfd0b2;
+    color: #62513d;
+}
+
+#formularioRSVP input:focus,
+#formularioRSVP select:focus,
+#formularioRSVP textarea:focus {
+    border-color: #b99a62;
+    box-shadow: 0 0 0 3px rgba(185,154,98,.10);
+}
+
+.mensaje-rsvp {
+    color: #75664f;
+}
+
+/* ================================
+   PASE DIGITAL
+================================ */
+
+.pase-tarjeta {
+    background: #ffffff;
+    border: 1px solid #d8c39b;
+    box-shadow: 0 15px 45px rgba(120,95,55,.10);
+}
+
+.pase-corazon {
+    color: #b99a62;
+}
+
+.pase-tarjeta h3 {
+    color: #62513d;
+}
+
+.pase-pie {
+    color: #b99a62;
+}
+
+/* ================================
+   ÁLBUM COMPARTIDO
+================================ */
+
+.album {
+    background: #fbf9f5;
+}
+
+.galeria-publica-glam {
+    background: transparent;
+}
+
+.galeria-publica-glam h2 {
+    color: #62513d;
+}
+
+/* Galería horizontal vintage */
+
+#galeriaPublicaGLAM {
+    background: #f5f1e9 !important;
+    scrollbar-color: #b99a62 #eee7da !important;
+}
+
+#galeriaPublicaGLAM .foto-publica-glam {
+    background: #ffffff !important;
+    border: 1px solid #dfcda7 !important;
+    box-shadow: 1px 3px 10px rgba(120,95,55,.15) !important;
+}
+
+#galeriaPublicaGLAM::-webkit-scrollbar-track {
+    background: #eee7da !important;
+}
+
+#galeriaPublicaGLAM::-webkit-scrollbar-thumb {
+    background: #b99a62 !important;
+}
+
+#galeriaPublicaGLAM .foto-publica-glam:hover {
+    box-shadow: 2px 7px 15px rgba(120,95,55,.20) !important;
+}
+
+/* ================================
+   VISOR DE FOTOGRAFÍAS
+================================ */
+
+.visor-fotos {
+    background: rgba(35,29,22,.95);
+}
+
+#visorFotos .navegacion-vintage button {
+    border-color: rgba(223,205,167,.7);
+    background: rgba(80,65,45,.75);
+}
+
+#visorFotos .contador-vintage {
+    background: rgba(80,65,45,.8);
+}
+
+/* ================================
+   PIE DE PÁGINA
+================================ */
+
+.pie-pagina {
+    background: #fffefa;
+}
+
+.pie-ornamento {
+    color: #b99a62;
+}
+
+.pie-pagina > p {
+    color: #71685d;
+}
+
+.pie-pagina .titulo-caligrafico {
+    color: #62513d;
+}
+
+.pie-pagina > span {
+    color: #9c835a;
+}
+
+.pie-marca {
+    border-color: #e8dfcf;
+}
+
+.pie-marca strong {
+    color: #b99a62;
+}
+
+/* ==================================================
+   DECORACIÓN BOTÁNICA FLORAL
+   Flores blancas, hojas suaves y detalles dorados
+================================================== */
+
+.portada,
+.presentacion,
+.confirmacion,
+.pie-pagina {
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.portada::before,
+.portada::after,
+.presentacion::before,
+.presentacion::after,
+.confirmacion::before,
+.confirmacion::after,
+.pie-pagina::before,
+.pie-pagina::after {
+    content: "";
+    position: absolute;
+    width: clamp(130px, 23vw, 270px);
+    height: clamp(150px, 26vw, 300px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .94;
+}
+
+/* Ramo floral superior izquierdo */
+
+.portada::before,
+.presentacion::before,
+.confirmacion::before,
+.pie-pagina::before {
+    top: 0;
+    left: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 300'%3E%3Cg fill='none' stroke='%23999b7e' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M8 8 Q65 65 110 145 Q130 190 220 260'/%3E%3Cpath d='M35 0 Q70 75 70 145'/%3E%3Cpath d='M0 90 Q65 105 145 180'/%3E%3C/g%3E%3Cg fill='%23a6a58a'%3E%3Cellipse cx='47' cy='77' rx='11' ry='29' transform='rotate(-45 47 77)'/%3E%3Cellipse cx='91' cy='121' rx='11' ry='30' transform='rotate(45 91 121)'/%3E%3Cellipse cx='132' cy='173' rx='10' ry='28' transform='rotate(-45 132 173)'/%3E%3Cellipse cx='48' cy='135' rx='10' ry='27' transform='rotate(55 48 135)'/%3E%3C/g%3E%3Cg fill='%23fffefa' stroke='%23d8c49b' stroke-width='1.4'%3E%3Ccircle cx='91' cy='49' r='24'/%3E%3Ccircle cx='91' cy='49' r='14'/%3E%3Ccircle cx='91' cy='49' r='5' fill='%23c4a36d'/%3E%3Ccircle cx='158' cy='118' r='20'/%3E%3Ccircle cx='158' cy='118' r='11'/%3E%3Ccircle cx='158' cy='118' r='4' fill='%23c4a36d'/%3E%3Ccircle cx='42' cy='184' r='19'/%3E%3Ccircle cx='42' cy='184' r='10'/%3E%3Ccircle cx='42' cy='184' r='4' fill='%23c4a36d'/%3E%3C/g%3E%3Cg fill='%23fffefa' stroke='%23d8c49b' stroke-width='1'%3E%3Ccircle cx='183' cy='70' r='7'/%3E%3Ccircle cx='196' cy='61' r='7'/%3E%3Ccircle cx='205' cy='75' r='7'/%3E%3Ccircle cx='192' cy='83' r='7'/%3E%3Ccircle cx='196' cy='72' r='3' fill='%23c4a36d'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Ramo floral superior derecho */
+
+.portada::after,
+.presentacion::after,
+.confirmacion::after,
+.pie-pagina::after {
+    top: 0;
+    right: 0;
+    transform: scaleX(-1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 300'%3E%3Cg fill='none' stroke='%23999b7e' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M8 8 Q65 65 110 145 Q130 190 220 260'/%3E%3Cpath d='M35 0 Q70 75 70 145'/%3E%3Cpath d='M0 90 Q65 105 145 180'/%3E%3C/g%3E%3Cg fill='%23a6a58a'%3E%3Cellipse cx='47' cy='77' rx='11' ry='29' transform='rotate(-45 47 77)'/%3E%3Cellipse cx='91' cy='121' rx='11' ry='30' transform='rotate(45 91 121)'/%3E%3Cellipse cx='132' cy='173' rx='10' ry='28' transform='rotate(-45 132 173)'/%3E%3Cellipse cx='48' cy='135' rx='10' ry='27' transform='rotate(55 48 135)'/%3E%3C/g%3E%3Cg fill='%23fffefa' stroke='%23d8c49b' stroke-width='1.4'%3E%3Ccircle cx='91' cy='49' r='24'/%3E%3Ccircle cx='91' cy='49' r='14'/%3E%3Ccircle cx='91' cy='49' r='5' fill='%23c4a36d'/%3E%3Ccircle cx='158' cy='118' r='20'/%3E%3Ccircle cx='158' cy='118' r='11'/%3E%3Ccircle cx='158' cy='118' r='4' fill='%23c4a36d'/%3E%3Ccircle cx='42' cy='184' r='19'/%3E%3Ccircle cx='42' cy='184' r='10'/%3E%3Ccircle cx='42' cy='184' r='4' fill='%23c4a36d'/%3E%3C/g%3E%3Cg fill='%23fffefa' stroke='%23d8c49b' stroke-width='1'%3E%3Ccircle cx='183' cy='70' r='7'/%3E%3Ccircle cx='196' cy='61' r='7'/%3E%3Ccircle cx='205' cy='75' r='7'/%3E%3Ccircle cx='192' cy='83' r='7'/%3E%3Ccircle cx='196' cy='72' r='3' fill='%23c4a36d'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Contenido por encima de la decoración */
+
+.portada-contenido,
+.presentacion > *,
+.confirmacion > *,
+.pie-pagina > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Portada: flores un poco más discretas */
+
+.portada::before,
+.portada::after {
+    opacity: .9;
+}
+
+/* Flores en las secciones interiores */
+
+.presentacion::before,
+.presentacion::after,
+.confirmacion::before,
+.confirmacion::after {
+    opacity: .45;
+}
+
+/* Pie de página */
+
+.pie-pagina::before,
+.pie-pagina::after {
+    opacity: .65;
+}
+
+/* Evitar que las flores ocupen demasiado espacio en móvil */
+
+@media (max-width: 700px) {
+
+    .portada::before,
+    .portada::after {
+        width: 125px;
+        height: 150px;
+        opacity: .85;
+    }
+
+    .presentacion::before,
+    .presentacion::after,
+    .confirmacion::before,
+    .confirmacion::after,
+    .pie-pagina::before,
+    .pie-pagina::after {
+        width: 100px;
+        height: 125px;
+        opacity: .35;
+    }
+
+    .portada-contenido {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .nombres-portada {
+        font-size: clamp(58px, 16vw, 90px);
+    }
+
+    .fecha-portada {
+        letter-spacing: 2px;
+    }
+}
+
+/* ==================================================
+   FIN DEL DISEÑO GLAM LUXURY WHITE & GOLD
+================================================== */
+
