@@ -22,17 +22,17 @@ const DATOS_BODA = {
         mapa: ""
     },
 
-    vestimenta: {
-        titulo: "Elegante",
-        descripcion: "Nos encantará verte lucir tu mejor estilo para esta ocasión.",
-        colores: [
-            "#e9dfca",
-            "#b69a62",
-            "#f7f3eb",
-            "#899080",
-            "#ffffff"
-        ]
-    },
+vestimenta: {
+    titulo: "Elegante",
+    descripcion: "Nos encantará verte lucir tu mejor estilo para esta ocasión.",
+    colores: [
+        "#eee4d2",
+        "#c5ad82",
+        "#f9f6ef",
+        "#a6a18b",
+        "#d8c4b6"
+    ]
+},
 
     itinerario: [
         {
