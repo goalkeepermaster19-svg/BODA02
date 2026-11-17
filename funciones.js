@@ -292,9 +292,9 @@ function cargarRegalos() {
 }
 
 
-/* ==========================================
-   SOBRE
-========================================== */
+/* =========================================
+   APERTURA DEL SOBRE · JARDÍN DE ORO
+========================================= */
 
 function configurarSobre() {
 
@@ -302,27 +302,41 @@ function configurarSobre() {
     const sobre = document.getElementById("sobreInicial");
     const invitacion = document.getElementById("invitacion");
 
+    if (!boton || !sobre || !invitacion) return;
+
     boton.addEventListener("click", () => {
 
-        sobre.classList.add("cerrado");
+        if (sobre.classList.contains("sobre-abierto")) return;
 
-        setTimeout(() => {
+        boton.disabled = true;
 
-            sobre.style.display = "none";
-            invitacion.classList.remove("oculto");
+        // Desprender el sello y abrir las solapas.
+        sobre.classList.add("sobre-abierto");
 
-            document.body.style.overflow = "auto";
+        // Dar tiempo para que la carta salga del sobre.
+        window.setTimeout(() => {
 
-            configurarAnimaciones();
+            sobre.classList.add("cerrado");
 
-        }, 900);
+            window.setTimeout(() => {
+
+                sobre.style.display = "none";
+
+                invitacion.classList.remove("oculto");
+
+                document.body.classList.add("invitacion-activa");
+                document.body.style.overflow = "auto";
+
+                if (typeof configurarAnimaciones === "function") {
+                    configurarAnimaciones();
+                }
+
+            }, 850);
+
+        }, 1250);
 
     });
-
-    document.body.style.overflow = "hidden";
-
 }
-
 
 /* ==========================================
    MENÚ
