@@ -1,3 +1,4 @@
+
 const DATOS_BODA = {
 
     nombres: {
@@ -25,11 +26,11 @@ const DATOS_BODA = {
         titulo: "Elegante",
         descripcion: "Nos encantará verte lucir tu mejor estilo para esta ocasión.",
         colores: [
-            "#d8c6b2",
-            "#a99b88",
-            "#c4b5a5",
-            "#e8dcd0",
-            "#77745f"
+            "#e9dfca",
+            "#b69a62",
+            "#f7f3eb",
+            "#899080",
+            "#ffffff"
         ]
     },
 
@@ -84,7 +85,5 @@ const DATOS_BODA = {
 
 };
 
-
-// COMPROBACIÓN DE CONFIGURACIÓN
 console.log("DATOS BODA cargados correctamente.");
 console.log("ENDPOINT GLAM CONFIGURADO:", DATOS_BODA.rsvpEndpoint);
