@@ -1,8 +1,11 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    cargarDatos();
+    // La apertura se configura primero para que no dependa
+    // de que las demás funciones se ejecuten correctamente.
     configurarSobre();
+
+    cargarDatos();
     configurarMenu();
     configurarMusica();
     configurarGaleria();
@@ -17,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarInvitadoGLAM();
 
 });
+
 
 
 /* ==========================================
