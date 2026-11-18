@@ -306,40 +306,55 @@ function configurarSobre() {
     const sobre = document.getElementById("sobreInicial");
     const invitacion = document.getElementById("invitacion");
 
-    if (!boton || !sobre || !invitacion) return;
+    if (!boton || !sobre || !invitacion) {
+        console.error("GLAM: No se encontraron los elementos de apertura.");
+        return;
+    }
+
+    document.body.style.overflow = "hidden";
+
+    boton.type = "button";
 
     boton.addEventListener("click", () => {
 
-        if (sobre.classList.contains("sobre-abierto")) return;
+        if (boton.dataset.abriendo === "true") return;
 
+        boton.dataset.abriendo = "true";
         boton.disabled = true;
 
-        // Desprender el sello y abrir las solapas.
-        sobre.classList.add("sobre-abierto");
+        // Preparar la invitación
+        invitacion.classList.remove("oculto");
+        invitacion.style.display = "block";
+        invitacion.style.opacity = "0";
+        invitacion.style.transition = "opacity 1.2s ease";
 
-        // Dar tiempo para que la carta salga del sobre.
+        // Animación de salida del sobre
+        sobre.style.transition =
+            "opacity .9s ease, transform .9s ease";
+
+        sobre.style.opacity = "0";
+        sobre.style.transform = "translateY(-25px) scale(1.03)";
+        sobre.style.pointerEvents = "none";
+
         window.setTimeout(() => {
 
-            sobre.classList.add("cerrado");
+            sobre.style.display = "none";
 
-            window.setTimeout(() => {
+            invitacion.style.opacity = "1";
 
-                sobre.style.display = "none";
+            document.body.style.overflow = "auto";
 
-                invitacion.classList.remove("oculto");
+            configurarAnimaciones();
 
-                document.body.classList.add("invitacion-activa");
-                document.body.style.overflow = "auto";
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-                if (typeof configurarAnimaciones === "function") {
-                    configurarAnimaciones();
-                }
-
-            }, 850);
-
-        }, 1250);
+        }, 950);
 
     });
+
 }
 
 /* ==========================================
