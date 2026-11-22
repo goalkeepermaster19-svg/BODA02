@@ -281,3 +281,186 @@ a{color:inherit;text-decoration:none}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
   .revelar{opacity:1;transform:none}
 }
+/* =====================================================
+   ESTÉTICA · CURVAS, DIFUMINADOS Y CRISTAL
+===================================================== */
+:root{
+  --rosa:#ead2cc;
+  --azul-polvo:#c3d0e0;
+  --oro-foil:linear-gradient(110deg,#8d6c36,#d9bd7c 40%,#b8975a 60%,#e6d3a3);
+}
+
+/* ---------- Brillos difuminados ---------- */
+.seccion::before,.cuenta-regresiva::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(38% 32% at 8% 12%,rgba(220,197,146,.38),transparent 70%),
+    radial-gradient(42% 38% at 94% 88%,rgba(234,210,204,.55),transparent 70%),
+    radial-gradient(30% 28% at 85% 8%,rgba(195,208,224,.45),transparent 70%);
+  filter:blur(26px);
+}
+.video-seccion::before,.confirmacion::before,.cuenta-regresiva::before{
+  background:
+    radial-gradient(40% 35% at 10% 15%,rgba(220,197,146,.22),transparent 70%),
+    radial-gradient(40% 40% at 92% 85%,rgba(150,170,210,.25),transparent 70%);
+}
+.seccion>*:not(.decoracion-esquina),.cuenta-regresiva>*{position:relative;z-index:2}
+
+/* ---------- Transiciones curvas entre secciones ---------- */
+.portada::after,.seccion::after,.cuenta-regresiva::after{
+  content:"";position:absolute;left:-10%;right:-10%;bottom:-1px;
+  height:clamp(45px,8vw,100px);background:var(--sig,transparent);
+  border-radius:50% 50% 0 0/100% 100% 0 0;z-index:1;pointer-events:none;
+}
+.portada{--sig:var(--marfil);padding-bottom:130px}
+.presentacion{--sig:#2a3850}
+.cuenta-regresiva{--sig:var(--crema);padding-bottom:150px}
+.historia{--sig:var(--marfil)}
+.galeria{--sig:var(--noche)}
+.video-seccion{--sig:var(--marfil)}
+.itinerario{--sig:var(--crema)}
+.ubicaciones{--sig:var(--marfil)}
+.vestimenta{--sig:var(--crema)}
+.regalos{--sig:#2a3850}
+.confirmacion{--sig:var(--marfil)}
+.pase-digital{--sig:var(--crema)}
+.album{--sig:var(--noche)}
+.seccion{padding-bottom:clamp(120px,14vw,170px)}
+
+/* ---------- Portada: arco y resplandor ---------- */
+.portada-velo{
+  inset:clamp(14px,3vw,30px);
+  border-radius:min(50vw,420px) min(50vw,420px) 44px 44px;
+  border:1px solid rgba(220,197,146,.6);
+  box-shadow:inset 0 0 80px rgba(220,197,146,.12);
+}
+.portada::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(40% 30% at 20% 85%,rgba(220,197,146,.30),transparent 70%),
+    radial-gradient(35% 30% at 85% 15%,rgba(234,210,204,.28),transparent 70%);
+  filter:blur(30px);mix-blend-mode:screen;
+}
+
+/* ---------- Títulos con efecto lámina dorada ---------- */
+.titulo-caligrafico{
+  background:linear-gradient(110deg,#7d5f2e,#c9a965 35%,#8f6f3a 65%,#d9bd7c);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  padding:.1em .12em;
+}
+.cuenta-regresiva .titulo-caligrafico,.video-seccion .titulo-caligrafico,
+.confirmacion .titulo-caligrafico,.pie-pagina .titulo-caligrafico{
+  background-image:linear-gradient(110deg,#e9d7a7,#fff3cf 40%,#d4b26f 65%,#f0e0b4);
+}
+
+/* ---------- Tarjetas de cristal ---------- */
+.ubicacion-tarjeta,.regalo-item,.pase-tarjeta,.carga-fotografias{
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  border:1px solid rgba(255,255,255,.8);
+  border-radius:38px;outline:0;
+  box-shadow:0 20px 60px rgba(60,50,40,.10),inset 0 1px 0 rgba(255,255,255,.9);
+}
+.ubicacion-tarjeta:nth-child(1){border-radius:38px 120px 38px 38px}
+.ubicacion-tarjeta:nth-child(2){border-radius:120px 38px 38px 38px}
+.regalo-item:nth-child(odd){border-radius:38px 80px 38px 38px}
+.regalo-item:nth-child(even){border-radius:80px 38px 38px 38px}
+.carga-fotografias{border:1.5px dashed rgba(184,151,90,.6);border-radius:44px}
+
+.contador-unidad{
+  border:1px solid rgba(255,255,255,.18);border-radius:60px;
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  padding:22px 10px;box-shadow:inset 0 1px 0 rgba(255,255,255,.15);
+}
+.datos-invitacion{
+  border:1px solid rgba(255,255,255,.2);border-radius:40px;
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+}
+
+/* ---------- Fotos en arco y formas orgánicas ---------- */
+.historia-imagen{border-radius:999px 999px 36px 36px}
+.historia-imagen img{border-radius:inherit;box-shadow:0 30px 70px rgba(40,35,25,.22)}
+.marco-foto{border-radius:999px 999px 36px 36px}
+
+.foto-galeria{border-radius:30px;box-shadow:0 18px 45px rgba(40,35,25,.15)}
+.foto-grande{border-radius:999px 999px 30px 30px}
+.foto-alta{border-radius:30px 30px 30px 120px}
+.foto-ancha{border-radius:120px 30px 30px 30px}
+
+.video-contenedor{
+  border-radius:44px;padding:12px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.2);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.video-contenedor iframe,.video-contenedor video,.video-placeholder{border-radius:32px}
+
+.pase-tarjeta{
+  width:min(380px,100%);padding:85px 32px 50px;
+  border-radius:999px 999px 44px 44px;
+  border:1px solid rgba(184,151,90,.7);
+}
+.vestimenta-dibujo{box-shadow:0 18px 40px rgba(60,50,40,.10)}
+#galeriaPublicaGLAM img{border-radius:26px}
+.visor-fotos>img{border-radius:22px}
+
+/* ---------- Itinerario suave ---------- */
+.itinerario-lista::before{
+  width:2px;border-radius:2px;opacity:1;
+  background:linear-gradient(transparent,var(--oro) 12%,var(--oro) 88%,transparent);
+}
+.evento-punto{box-shadow:0 0 0 7px rgba(184,151,90,.18)}
+.evento-descripcion{
+  padding:16px 24px;border-radius:26px;
+  background:rgba(255,255,255,.5);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.8);
+}
+
+/* ---------- Botones tipo píldora ---------- */
+.boton-principal,.boton-abrir,.boton-secundario{border-radius:999px}
+.boton-principal,.boton-abrir{
+  background:var(--oro-foil);border-color:transparent;color:#2a2113;
+  box-shadow:0 10px 30px rgba(184,151,90,.35);
+}
+.boton-principal:hover,.boton-abrir:hover,.confirmacion .boton-principal:hover{
+  background:var(--oro-foil);color:#2a2113;
+  transform:translateY(-3px);box-shadow:0 16px 38px rgba(184,151,90,.5);
+}
+.boton-secundario{padding:12px 26px;background:rgba(255,255,255,.6)}
+#formularioRSVP select,#formularioRSVP textarea{
+  border-radius:22px;background:rgba(255,255,255,.1);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+
+/* ---------- Menú y sobre ---------- */
+.menu-lateral{
+  border-radius:48px 0 0 48px;background:rgba(28,38,56,.82);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+}
+.sobre-inicial::before{border-radius:46px}
+.carta-interior{border-radius:14px}
+
+/* ---------- Aparición con desenfoque ---------- */
+.revelar{
+  filter:blur(6px);
+  transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.2,.7,.2,1),filter 1.1s ease;
+}
+.revelar.visible{filter:none}
+
+/* ---------- Móvil ---------- */
+@media(max-width:800px){
+  .seccion{padding-bottom:115px}
+  .cuenta-regresiva{padding-bottom:120px}
+  .contador-unidad{padding:16px 4px;border-radius:40px}
+  .foto-grande{border-radius:140px 140px 30px 30px}
+  .ubicacion-tarjeta:nth-child(n){border-radius:32px 80px 32px 32px}
+  .regalo-item:nth-child(n){border-radius:32px 60px 32px 32px}
+  .evento-descripcion{padding:12px 16px;border-radius:20px}
+  .menu-lateral{border-radius:36px 0 0 36px}
+}
+@media(prefers-reduced-motion:reduce){.revelar{filter:none}}
