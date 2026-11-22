@@ -464,3 +464,89 @@ a{color:inherit;text-decoration:none}
   .menu-lateral{border-radius:36px 0 0 36px}
 }
 @media(prefers-reduced-motion:reduce){.revelar{filter:none}}
+
+/* =====================================================
+   CAPA 2 · MOVIMIENTO Y DETALLES
+===================================================== */
+
+/* Brillos que flotan */
+@keyframes deriva{
+  from{transform:translate3d(-2%,-1%,0) scale(1)}
+  to{transform:translate3d(2%,2%,0) scale(1.12)}
+}
+.seccion::before,.cuenta-regresiva::before{animation:deriva 16s ease-in-out infinite alternate}
+
+/* Destello dorado en títulos */
+@keyframes brillo{from{background-position:0% center}to{background-position:100% center}}
+.titulo-caligrafico{background-size:200% auto;animation:brillo 6s ease-in-out infinite alternate}
+
+/* Parallax de portada */
+.portada-imagen{
+  inset:-8% 0;animation:none;will-change:transform;
+  transform:translate3d(0,calc(var(--py,0)*1px),0) scale(1.08);
+}
+
+/* Textura de papel */
+body::after{
+  content:"";position:fixed;inset:0;z-index:9000;pointer-events:none;
+  opacity:.06;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Barra de progreso */
+#progreso{
+  position:fixed;top:0;left:0;height:3px;width:0;z-index:4500;
+  background:var(--oro-foil);border-radius:0 6px 6px 0;
+  box-shadow:0 0 12px rgba(184,151,90,.7);
+}
+
+/* Pétalos */
+#petalos{position:fixed;inset:0;z-index:4000;pointer-events:none;overflow:hidden;opacity:0;transition:opacity 1.5s ease}
+#petalos.activo{opacity:1}
+.petalo{
+  position:absolute;top:-8vh;
+  width:var(--t);height:calc(var(--t)*1.3);
+  background:radial-gradient(circle at 30% 30%,#fff,var(--c));
+  border-radius:150% 0 150% 0;opacity:.75;filter:blur(.4px);
+  animation:caer var(--d) linear infinite;animation-delay:var(--r);
+}
+@keyframes caer{
+  0%{transform:translate3d(0,0,0) rotate(0)}
+  50%{transform:translate3d(var(--x),55vh,0) rotate(180deg)}
+  100%{transform:translate3d(calc(var(--x)*-.4),115vh,0) rotate(360deg)}
+}
+
+/* Cinta dorada curva */
+.cinta{
+  position:relative;z-index:3;margin:-30px -5%;padding:16px 0;
+  transform:rotate(-2.2deg);overflow:hidden;
+  background:var(--oro-foil);color:#2a2113;
+  box-shadow:0 12px 35px rgba(120,90,40,.3);
+}
+.cinta-pista{display:flex;width:max-content;animation:cinta 28s linear infinite}
+.cinta span{padding:0 28px;font:500 11px var(--sans);letter-spacing:5px;text-transform:uppercase;white-space:nowrap}
+@keyframes cinta{to{transform:translateX(-50%)}}
+
+/* Corazones que laten */
+@keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.pase-corazon,.ornamento i,.confirmacion-decoracion,.pie-ornamento{
+  display:inline-block;animation:latido 3.2s ease-in-out infinite;
+}
+
+/* Líneas a los lados de cada etiqueta */
+.seccion:not(.historia) .etiqueta-seccion{display:flex;align-items:center;justify-content:center;gap:16px}
+.seccion:not(.historia) .etiqueta-seccion::before,
+.seccion:not(.historia) .etiqueta-seccion::after{
+  content:"";width:46px;height:1px;background:linear-gradient(90deg,transparent,var(--oro));
+}
+.seccion:not(.historia) .etiqueta-seccion::after{transform:scaleX(-1)}
+
+/* Barra de desplazamiento */
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--marfil)}
+::-webkit-scrollbar-thumb{background:var(--oro-foil);border-radius:10px;border:2px solid var(--marfil)}
+
+@media(prefers-reduced-motion:reduce){
+  .seccion::before,.cuenta-regresiva::before,.titulo-caligrafico,
+  .cinta-pista,.petalo,.pase-corazon,.ornamento i,.confirmacion-decoracion,.pie-ornamento{animation:none!important}
+}
