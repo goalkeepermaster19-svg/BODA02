@@ -3,7 +3,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // La apertura se configura primero para que no dependa
     // de que las demás funciones se ejecuten correctamente.
-    configurarSobre();
+   function configurarSobre() {
+
+    const boton = document.getElementById("botonAbrir");
+    const sobre = document.getElementById("sobreInicial");
+    const invitacion = document.getElementById("invitacion");
+
+    if (!boton || !sobre || !invitacion) return;
+
+    document.body.style.overflow = "hidden";
+
+    boton.addEventListener("click", () => {
+
+        if (boton.dataset.abriendo === "true") return;
+        boton.dataset.abriendo = "true";
+        boton.disabled = true;
+
+        sobre.classList.add("abriendo");
+
+        window.setTimeout(() => {
+
+            invitacion.classList.remove("oculto");
+            invitacion.style.display = "block";
+            invitacion.style.opacity = "0";
+            invitacion.style.transition = "opacity 1.2s ease";
+
+            sobre.style.transition = "opacity .9s ease, transform .9s ease";
+            sobre.style.opacity = "0";
+            sobre.style.transform = "scale(1.04)";
+            sobre.style.pointerEvents = "none";
+
+            window.setTimeout(() => {
+                sobre.style.display = "none";
+                invitacion.style.opacity = "1";
+                document.body.style.overflow = "auto";
+                configurarAnimaciones();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 950);
+
+        }, 1700);
+    });
+}
 
     cargarDatos();
     configurarMenu();
@@ -270,31 +310,21 @@ function cargarVestimenta() {
 function cargarRegalos() {
 
     const contenedor = document.getElementById("listaRegalos");
+    if (!contenedor || !Array.isArray(DATOS_BODA.regalos)) return;
 
     contenedor.innerHTML = "";
 
     DATOS_BODA.regalos.forEach(regalo => {
-
         const elemento = document.createElement("article");
-
         elemento.className = "regalo-item";
-
         elemento.innerHTML = `
             <h3>${regalo.titulo}</h3>
             <p>${regalo.descripcion}</p>
-            ${
-                regalo.enlace
-                    ? `<a href="${regalo.enlace}" target="_blank">Ver información ↗</a>`
-                    : ""
-            }
+            ${regalo.enlace ? `<a href="${regalo.enlace}" target="_blank" rel="noopener">Ver información ↗</a>` : ""}
         `;
-
         contenedor.appendChild(elemento);
-
     });
-
 }
-
 
 /* =========================================
    APERTURA DEL SOBRE · JARDÍN DE ORO
@@ -552,6 +582,13 @@ function configurarAlbum() {
 function configurarFormulario() {
 
     const formulario = document.getElementById("formularioRSVP");
+
+    const selAsistencia = document.getElementById("asistencia");
+const bloqueAsistencia = document.getElementById("datosAsistencia");
+
+selAsistencia.addEventListener("change", () => {
+    bloqueAsistencia.style.display = selAsistencia.value === "NO" ? "none" : "flex";
+});
 
     formulario.addEventListener("submit", async evento => {
 
