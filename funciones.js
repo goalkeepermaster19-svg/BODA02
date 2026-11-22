@@ -582,3 +582,79 @@ function cambiarFotoVisor(dir) {
     indiceVisor = (indiceVisor + dir + fotosVisor.length) % fotosVisor.length;
     mostrarFotoVisor();
 }
+
+/* ===== CAPA 2 · EFECTOS VISUALES ===== */
+document.addEventListener("DOMContentLoaded", () => {
+
+    const reducido = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const inv = document.getElementById("invitacion");
+
+    // Barra de progreso
+    const barra = document.createElement("div");
+    barra.id = "progreso";
+    document.body.appendChild(barra);
+
+    // Pétalos
+    const capa = document.createElement("div");
+    capa.id = "petalos";
+    const colores = ["#f4d9d3", "#ead2cc", "#f2e2bf", "#e6d3a3", "#ffffff"];
+
+    for (let i = 0; i < (reducido ? 0 : 16); i++) {
+        const p = document.createElement("span");
+        p.className = "petalo";
+        p.style.cssText =
+            `left:${Math.random() * 100}%;` +
+            `--t:${8 + Math.random() * 10}px;` +
+            `--c:${colores[i % colores.length]};` +
+            `--d:${12 + Math.random() * 12}s;` +
+            `--r:-${Math.random() * 20}s;` +
+            `--x:${(Math.random() - .5) * 160}px`;
+        capa.appendChild(p);
+    }
+    document.body.appendChild(capa);
+
+    if (inv) {
+        const activar = () => {
+            if (!inv.classList.contains("oculto")) capa.classList.add("activo");
+        };
+        new MutationObserver(activar).observe(inv, {
+            attributes: true,
+            attributeFilter: ["class", "style"]
+        });
+    }
+
+    // Cinta dorada con nombres y fecha
+    const historia = document.getElementById("historia");
+    if (historia && typeof DATOS_BODA !== "undefined") {
+        const n = DATOS_BODA.nombres;
+        const f = new Date(DATOS_BODA.fecha);
+        const item =
+            `<span>${n.primero} ♥ ${n.segundo}</span><span>✦</span>` +
+            `<span>${f.getDate()} · ${f.getMonth() + 1} · ${f.getFullYear()}</span><span>✦</span>`;
+
+        const cinta = document.createElement("div");
+        cinta.className = "cinta";
+        cinta.innerHTML = `<div class="cinta-pista">${item.repeat(8)}</div>`;
+        historia.parentNode.insertBefore(cinta, historia);
+    }
+
+    // Progreso y parallax
+    const portada = document.querySelector(".portada");
+    let pendiente = false;
+
+    addEventListener("scroll", () => {
+        if (pendiente) return;
+        pendiente = true;
+
+        requestAnimationFrame(() => {
+            const y = scrollY;
+            const max = document.documentElement.scrollHeight - innerHeight;
+            barra.style.width = (max > 0 ? (y / max) * 100 : 0) + "%";
+
+            if (portada && !reducido && y < innerHeight * 1.3) {
+                portada.style.setProperty("--py", Math.min(y * .25, 120));
+            }
+            pendiente = false;
+        });
+    }, { passive: true });
+});
